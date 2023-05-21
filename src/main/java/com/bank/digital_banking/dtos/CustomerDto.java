@@ -1,4 +1,4 @@
-package com.bank.digital_banking.entities;
+package com.bank.digital_banking.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -9,18 +9,16 @@ import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.util.List;
 
-@Entity
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CustomerDto {
+
     private Long id ;
     private String name;
     private String email;
-    @OneToMany(mappedBy = "customer")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<BankAccount> bankAccountList ;
+
 
 
 
